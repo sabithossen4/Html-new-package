@@ -1,0 +1,75 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  7.16 Skill css
+/*----------------------------------------*/
+
+.#{$theme-prefix}-skill {
+  &-main {
+    width: 100%;
+    max-width: 518px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    @media #{$md,$sm,$xs} {
+      max-width: 100%;
+    }
+
+  }
+
+  &-item {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-bottom: 0;
+  }
+
+  &-name {
+    font-size: 16px;
+    font-weight: 600;
+    color: $title-color;
+    display: inline-block;
+  }
+
+  &-bar {
+    height: 8px;
+    border-radius: 100px;
+    background: #E9EBEE;
+  }
+
+  &-per {
+    height: 8px;
+    border-radius: 100px;
+    width: 0;
+    background: linear-gradient(90deg, #121D2E 0%, #FF8800 100%);
+    transition: 1s linear;
+    position: relative;
+
+    &:before {
+      content: attr(data-per);
+      position: absolute;
+      padding: 0px 5px;
+      // background-color: $title-color;
+      color: $white-color;
+      font-size: 11px;
+      font-weight: 700;
+      line-height: 20px;
+      border-radius: 4px;
+      top: -35px;
+      right: 0;
+      transform: translateX(50%);
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      width: 8px;
+      height: 14px;
+      // background-color: $title-color;
+      top: -20px;
+      right: 0;
+      clip-path: polygon(100% 0, 0 0, 100% 100%);
+    }
+  }
+}

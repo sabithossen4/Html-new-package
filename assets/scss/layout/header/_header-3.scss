@@ -1,0 +1,38 @@
+@use '../../utils' as *;
+/*----------------------------------------*/
+/*  3.3 Header Style 3
+/*----------------------------------------*/
+
+.#{$theme-prefix}-header {
+    &-layout3 {
+        .ot-main-menu {
+            nav {
+                ul {
+                    li {
+                        a {
+                            color: #3A1755;
+                        }
+
+                        &.has-dropdown::after {
+                            filter: brightness(0) contrast(1);
+                        }
+
+                        &:hover {
+                            &.has-dropdown::after {
+                                filter: brightness(0) contrast(1);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &.header-sticky {
+            background: $white-color;
+        }
+
+        @media #{$lg,$md,$sm,$xs} {
+            padding: 10px 0;
+        }
+    }
+}

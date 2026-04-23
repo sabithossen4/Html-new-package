@@ -1,0 +1,113 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  2.10 Accordion
+/*----------------------------------------*/
+.#{$theme-prefix}-faq {
+    &-accordion-box {
+        & .accordion {
+            &-items {
+                position: relative;
+                background: rgba(255, 255, 255, 0.08);
+                backdrop-filter: blur(20px) saturate(150%);
+                -webkit-backdrop-filter: blur(20px) saturate(150%);
+                border-radius: 16px;
+                border: 1px solid rgba(255, 255, 255, 0.4);
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+
+                &:not(:last-child) {
+                    margin-bottom: 12px;
+                }
+            }
+
+            &-header {
+                margin-bottom: 0;
+                border-radius: 8px;
+            }
+
+            &-icon {
+                position: absolute;
+                width: 32px;
+                height: 32px;
+                top: 15.5px;
+                right: 30px;
+                line-height: 32px;
+                text-align: center;
+                color: $title-color;
+                display: inline-block;
+                background: $white-color;
+                border-radius: 50%;
+                @include ot-transition();
+
+                i {
+                    font-size: 16px;
+                    @include ot-transition();
+                }
+
+                @media #{$xs} {
+                    right: 20px;
+                }
+            }
+
+            &-buttons {
+                width: 100%;
+                font-size: 20px;
+                font-weight: 500;
+                text-align: left;
+                padding: 20px 80px 20px 24px;
+                color: $white-color;
+                @include ot-transition();
+
+                @media #{$lg} {
+                    font-size: 18px;
+                }
+
+                @media #{$sm,$xs} {
+                    font-size: 18px;
+                    padding: 23px 80px 23px 20px;
+                }
+
+                &:not(.collapsed) {
+                    & .accordion {
+                        &-icon {
+                            i {
+                                rotate: 180deg;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &-body {
+                position: relative;
+                border-radius: 0 0 15px 15px;
+                padding: 24px 44px 30px 36px;
+                @include ot-transition();
+
+                @media #{$sm,$xs} {
+                    padding: 13px 20px 30px 20px;
+                }
+
+                & p {
+                    margin: 0;
+                    color: $white-color;
+                    font-size: 16px;
+                    font-weight: 400;
+                }
+
+                &::before {
+                    position: absolute;
+                    width: 93%;
+                    height: 1px;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    content: "";
+                    background: $white-color;
+                    text-align: center;
+                    margin: auto;
+                }
+            }
+        }
+    }
+}

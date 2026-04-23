@@ -1,0 +1,22 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  2.11 Tab
+/*----------------------------------------*/
+
+.#{$theme-prefix}-tab{
+    &-box-1{
+        & .of-product-item{
+            margin-bottom: 0;
+            @media #{$lg,$md,$sm,$xs} {
+                margin-bottom: 35px;
+            }
+
+            &.r-spac{
+                @media #{$lg,$md} {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+}

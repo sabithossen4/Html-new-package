@@ -1,0 +1,171 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  2.8 Offcanvas
+/*----------------------------------------*/
+.#{$theme-prefix}-offcanvas {
+  position: fixed;
+  background: $white-color;
+  width: 480px;
+  right: 0;
+  top: 0;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  @include ot-transform(translateX(100%));
+  @include ot-transition(.3s);
+  overflow-y: scroll;
+  overscroll-behavior-y: contain;
+  scrollbar-width: none;
+  z-index: 999;
+
+  @media #{$sm} {
+    width: 400px;
+  }
+  @media #{$xs} {
+    width: 100%;
+  }
+
+  &-header {
+    padding: 20px 40px;
+    background-color: $theme-color;
+  }
+
+  &-wrapper {
+    padding: 0 40px;
+  }
+
+  &.opend {
+    opacity: 1;
+    visibility: visible;
+    @include ot-transform(translateX(0));
+  }
+
+  &-close-toggle {
+    font-size: 16px;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    color: $theme-color;
+    border: 1px solid $theme-color;
+    background-color: $white-color;
+    border-radius: 50%;
+    @include ot-transition();
+
+    &:hover {
+      color: $white-color;
+      background: $theme-color;
+      border: 1px solid $theme-color;
+    }
+  }
+
+  &-header {
+    @media #{$lg,$md,$xs} {
+      margin-bottom: 40px;
+    }
+  }
+
+  &-title {
+    font-weight: 600;
+    font-size: 18px;
+    display: block;
+    text-transform: capitalize;
+    color: $black-color;
+    border-bottom: 1px solid #ebecf5;
+    padding-bottom: 10px;
+
+  }
+
+  &-info {
+    &-content{
+      & a{
+        &:not(:last-child){
+          margin-bottom: 10px;
+          display: inline-block;
+        }
+      }
+    }
+    &-icon {
+      & span {
+        font-size: 18px;
+        width: 45px;
+        height: 45px;
+        line-height: 45px;
+        text-align: center;
+        display: inline-block;
+        color: $white-color;
+        background: $black-color;
+        border-radius: 50%;
+        border-radius: 100%;
+        border: 0;
+        box-shadow: 0 8px 34px 0 rgba(36, 44, 73, 0.15);
+
+      }
+    }
+
+    &-text {
+      & span {
+        display: block;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 1.8;
+        text-transform: uppercase;
+        color: $theme-color;
+
+        &:last-child {
+          font-size: 16px;
+          color: $black-color;
+          text-transform: lowercase;
+        }
+
+      }
+
+      &.of-location {
+        & span {
+          &:last-child {
+            text-transform: capitalize;
+          }
+        }
+      }
+    }
+  }
+
+  &-gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 10px;
+
+    & a {
+      & img {
+        width: 100%;
+        height: 100%;
+        border-radius: 3px;
+      }
+    }
+  }
+
+  &-social {
+    & a {
+      font-size: 16px;
+      text-align: center;
+      display: inline-block;
+      color: $title-color;
+      @include ot-transition();
+
+      &:not(:last-child) {
+        margin-right: 15px;
+        padding-right: 15px;
+        border-right: 1px solid #d9d9d9;
+      }
+
+      &:hover {
+        color: $theme-color;
+        & span{
+          color: $theme-color;
+        }
+      }
+    }
+  }
+
+}

@@ -1,0 +1,58 @@
+@use '../../utils' as *;
+/*----------------------------------------*/
+/*  3.2 Header Style 2
+/*----------------------------------------*/
+
+.#{$theme-prefix}-header {
+    &-layout2 {
+        padding: 10px 0;
+
+        .ot-main-menu {
+            border-radius: 100px;
+            padding: 4px 0;
+        }
+
+        .ot-main-menu {
+            > {
+                nav {
+                    >ul {
+                        >li {
+                            &:not(:last-child) {
+                                padding-right: 0;
+                                margin-right: 0;
+                            }
+
+                            &>a {
+                                padding: 7px 24px;
+                                color: $white-color;
+                                border-radius: 100px;
+                            }
+
+
+                            &.has-dropdown::after {
+                                right: 8px;
+                            }
+
+                            &:hover {
+                                &.has-dropdown::after {
+                                    filter: brightness(0) contrast(1);
+                                }
+
+                                a {
+                                    color: $title-color;
+                                    background: $white-color;
+                                    text-decoration: none;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &.header-sticky {
+            padding: 15px 0;
+            background: $white-color;
+        }
+    }
+}

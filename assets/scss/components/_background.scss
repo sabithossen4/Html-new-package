@@ -1,0 +1,30 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  2.5 Background
+/*----------------------------------------*/
+.theme-bg {
+	background-color: $theme-color;
+}
+
+.grey-bg {
+	background-color: $grey-color;
+}
+
+.white-bg {
+	background-color: $white-color;
+}
+
+.black-bg {
+	background-color: $black-color;
+}
+
+.smoke-bg {
+	background-color: $smoke-color;
+}
+
+.gradient-bg {
+	background-size: cover;
+	background-repeat: no-repeat;
+	background: linear-gradient(180deg, #171b23 0%, #141820 100%);
+}

@@ -1,0 +1,69 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  2.7 Pagination
+/*----------------------------------------*/
+
+.#{$theme-prefix}-pagination {}
+
+
+.ot-slider {
+    &-btn {
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        background: #EFF3F8;
+        line-height: 60px;
+        border-radius: 100px;
+
+        &::before {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            content: "";
+            background: $theme-color;
+            z-index: 1;
+            transform: scale(0);
+            border-radius: 50%;
+            @include ot-transition();
+        }
+
+        .slider-icon {
+            @include ot-transition();
+        }
+
+        &.ot-orange {
+            &::before {
+                top: 0;
+            }
+        }
+
+        &:hover {
+            &::before {
+                transform: scale(1);
+            }
+
+            .slider-icon {
+                filter: brightness(0) contrast(1);
+            }
+        }
+
+    }
+
+    &-icon {
+        position: relative;
+        z-index: 3;
+        transition: .3s;
+    }
+}
+
+.slide-transtion {
+    -webkit-transition-timing-function: linear;
+    transition-timing-function: linear;
+
+    & .swiper-slide {
+        width: auto;
+    }
+}

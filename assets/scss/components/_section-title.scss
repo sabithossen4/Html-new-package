@@ -1,0 +1,61 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  2.12 Section Title
+/*----------------------------------------*/
+
+.#{$theme-prefix}-sec {}
+
+.ot-title-area {
+    @media #{$md,$sm,$xs} {
+        margin-bottom: 30px;
+    }
+}
+
+.#{$theme-prefix}-box {
+    &-title {
+        font-size: 24px;
+        line-height: 1;
+        display: inline-block;
+        text-transform: capitalize;
+    }
+}
+
+.ot-text-anime-1,
+.ot-text-anime-2,
+.ot-text-anime-3 {
+    text-transform: inherit;
+    overflow: hidden;
+}
+
+.fw-4 {
+    font-weight: 400;
+}
+
+.fw-5 {
+    font-weight: 500;
+}
+
+.fw-6 {
+    font-weight: 600;
+}
+
+.fw-7 {
+    font-weight: 700;
+}
+
+.fz-14 {
+    font-size: 14px;
+}
+
+.fz-15 {
+    font-size: 15px;
+}
+
+.fz-16 {
+    font-size: 16px;
+}
+
+.fz-18 {
+    font-size: 18px;
+}

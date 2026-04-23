@@ -1,0 +1,32 @@
+@use 'typography' as *;
+
+:root {
+
+    /**
+    @font family declaration
+    */
+    --ot-title-font          : "Montserrat", sans-serif; 
+    --ot-body-font           : "Noto Sans", sans-serif; 
+    --ot-style-font          : "Montserrat", sans-serif;
+    --ot-icon-font           : "Font Awesome 6 Pro";  
+
+    /**
+    @ripple declaration
+    */
+    --ot-ripple-ani-duration : 2s;
+
+    /**
+    @color declaration
+    */
+    --ot-theme-color         : #86BB46;
+    --ot-theme-color2        : #FEC51B;
+    --ot-title-color         : #002244;  
+    --ot-body-color          : #5D728A;   
+    --ot-border-color        : #D8DDE1;    
+    --ot-smoke-color         : #E7F9EE; 
+    --ot-white-color         : #ffffff;
+    --ot-placeholder-color   : #555c6a; 
+    --ot-black-color         : #000000;
+    --ot-gray-color          : #F5F6FC;
+    --ot-error-color         : #dc3545;
+}
